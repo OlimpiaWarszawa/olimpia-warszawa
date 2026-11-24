@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Olimpia Warszawa – informacje o klubie, stadionie i aktualnościach.">
+  <meta name="theme-color" content="#172b83">
+  <title>Olimpia Warszawa | Oficjalna strona klubu</title>
+  <style>
+    :root{--navy:#111b52;--blue:#293b9c;--blue2:#3854c4;--ice:#eef2ff;--ink:#17203b;--muted:#64708b;--white:#fff;--line:#e2e7f3;--shadow:0 18px 55px rgba(13,26,78,.13)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+    a{color:inherit;text-decoration:none}img{display:block;max-width:100%}.container{width:min(1160px,calc(100% - 40px));margin:auto}
+    .topline{height:5px;background:linear-gradient(90deg,var(--navy),var(--blue2),#9eb1ff)}
+    header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(226,231,243,.9)}
+    .nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.045em;color:var(--navy);line-height:1.05}.brand img{width:54px;height:54px;object-fit:contain}.brand small{display:block;font-size:10px;letter-spacing:.2em;color:var(--muted);font-weight:750;margin-top:5px}
+    nav{display:flex;align-items:center;gap:28px;font-size:13px;font-weight:800;color:#303b65}nav a{padding:12px 0;position:relative}nav a:after{content:"";position:absolute;left:0;bottom:5px;width:0;height:2px;background:var(--blue2);transition:.2s}nav a:hover:after{width:100%}
+    .nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border-radius:7px;background:var(--blue);color:white;font-weight:800;font-size:13px;box-shadow:0 8px 20px rgba(41,59,156,.2);transition:.2s}.nav-cta:hover,.btn:hover{background:var(--navy);transform:translateY(-2px)}
+    .menu{display:none;border:0;background:var(--ice);color:var(--navy);border-radius:8px;padding:10px 12px;font-size:20px}
+    .hero{position:relative;min-height:650px;display:flex;align-items:center;overflow:hidden;background:var(--navy);color:white}
+    .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(9,17,59,.92) 0%,rgba(14,28,91,.76) 48%,rgba(13,22,63,.2) 100%),url("assets/stadion-plyta.jpg") center 55%/cover;transform:scale(1.015)}
+    .hero:after{content:"";position:absolute;inset:auto 0 0;height:110px;background:linear-gradient(transparent,rgba(8,16,52,.32))}
+    .hero-content{position:relative;z-index:1;max-width:700px;padding:100px 0 120px}.eyebrow{display:inline-flex;align-items:center;gap:10px;text-transform:uppercase;letter-spacing:.22em;font-size:11px;font-weight:900;color:#c7d2ff}.eyebrow:before{content:"";width:28px;height:2px;background:#8fa5ff}
+    h1{font-size:clamp(44px,7vw,82px);line-height:.98;letter-spacing:-.055em;margin:22px 0 24px;font-weight:950}.hero p{max-width:570px;color:#e1e6ff;font-size:17px;line-height:1.8;margin:0 0 32px}.hero-actions{display:flex;gap:13px;flex-wrap:wrap}.btn-light{background:white;color:var(--navy);box-shadow:none}.btn-outline{border:1px solid rgba(255,255,255,.5);color:white;background:transparent;box-shadow:none}
+    .hero-mark{position:absolute;z-index:1;right:max(5vw,calc((100vw - 1160px)/2));bottom:65px;width:145px;height:145px;object-fit:contain;filter:drop-shadow(0 12px 28px rgba(0,0,0,.22));opacity:.95}
+    .ticker{background:var(--blue);color:white;overflow:hidden}.ticker-inner{display:flex;align-items:center;gap:35px;min-height:48px;white-space:nowrap;font-size:11px;font-weight:900;letter-spacing:.19em;text-transform:uppercase}.ticker span{opacity:.7}
+    section{padding:96px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:38px}.kicker{color:var(--blue2);font-size:11px;font-weight:900;letter-spacing:.2em;text-transform:uppercase}.section-head h2{font-size:clamp(32px,4vw,48px);letter-spacing:-.045em;line-height:1.08;color:var(--navy);margin:10px 0 0}.section-head p{max-width:420px;color:var(--muted);margin:0;font-size:14px}
+    .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}.intro-copy h3{font-size:27px;line-height:1.2;letter-spacing:-.03em;color:var(--navy);margin:0 0 18px}.intro-copy p{color:var(--muted);margin:0 0 16px}.intro-photo{position:relative}.intro-photo img{width:100%;height:430px;object-fit:cover;border-radius:10px;box-shadow:var(--shadow)}.photo-tag{position:absolute;left:-18px;bottom:24px;background:white;border-left:4px solid var(--blue2);padding:17px 22px;box-shadow:var(--shadow);font-weight:900;color:var(--navy)}.photo-tag small{display:block;color:var(--muted);font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+    .values{background:var(--ice)}.value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.value-card{background:white;border:1px solid #e3e8f8;border-radius:10px;padding:27px;min-height:190px}.value-no{font-size:12px;color:var(--blue2);font-weight:950;letter-spacing:.15em}.value-card h3{color:var(--navy);font-size:20px;margin:18px 0 8px}.value-card p{color:var(--muted);font-size:13px;margin:0}
+    .gallery-grid{display:grid;grid-template-columns:1.15fr .85fr;grid-template-rows:250px 250px;gap:16px}.gallery-grid figure{margin:0;position:relative;overflow:hidden;border-radius:9px;background:var(--ice)}.gallery-grid figure:first-child{grid-row:span 2}.gallery-grid img{width:100%;height:100%;object-fit:cover;transition:transform .55s}.gallery-grid figure:hover img{transform:scale(1.045)}.gallery-grid figcaption{position:absolute;left:0;right:0;bottom:0;padding:38px 20px 17px;color:white;font-weight:800;font-size:13px;background:linear-gradient(transparent,rgba(7,15,49,.78))}
+    .gallery-note{margin-top:18px;color:var(--muted);font-size:12px}
+    .news{background:#f8f9fd}.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.news-card{background:white;border:1px solid var(--line);border-radius:9px;padding:25px}.news-card .date{color:var(--blue2);font-size:10px;letter-spacing:.15em;text-transform:uppercase;font-weight:900}.news-card h3{font-size:19px;line-height:1.25;color:var(--navy);margin:13px 0 10px}.news-card p{font-size:13px;color:var(--muted);margin:0}.placeholder{display:inline-block;margin-top:16px;color:var(--blue2);font-size:11px;font-weight:900}
+    .contact{background:var(--navy);color:white}.contact .section-head h2{color:white}.contact .section-head p{color:#c2cbed}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px}.contact-box{border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:28px}.contact-box h3{margin:0 0 16px;font-size:20px}.contact-box p{color:#c2cbed;font-size:14px;margin:8px 0}.contact-box a{color:white;text-decoration:underline;text-underline-offset:3px}.contact-hint{font-size:12px!important;color:#aebbe9!important;margin-top:20px!important}
+    footer{background:#0b123b;color:#b9c3e8;padding:26px 0;font-size:11px}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer-brand{font-weight:900;letter-spacing:.12em;color:white}
+    @media(max-width:800px){.nav{height:70px}.menu{display:block}nav{display:none;position:absolute;left:0;right:0;top:70px;background:white;padding:15px 22px 22px;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:5px}nav.open{display:flex}nav a{padding:10px 0}.nav-cta{display:none}.hero{min-height:590px}.hero-content{padding:90px 0 120px}.hero-mark{width:90px;height:90px;right:22px;bottom:25px}.intro-grid,.contact-grid{grid-template-columns:1fr;gap:35px}.intro-photo img{height:330px}.photo-tag{left:10px}.value-grid,.news-grid{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:16px}.gallery-grid{grid-template-rows:230px 180px;gap:10px}section{padding:70px 0}}
+    @media(max-width:480px){.container{width:min(100% - 30px,1160px)}.brand img{width:45px;height:45px}.brand{font-size:13px}.hero{min-height:570px}.hero p{font-size:15px}.gallery-grid{display:flex;flex-direction:column}.gallery-grid figure{height:220px}.footer-inner{align-items:flex-start;flex-direction:column}}
+  </style>
+</head>
+<body>
+  <div class="topline"></div>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#start" aria-label="Olimpia Warszawa – strona główna">
+        <img src="assets/herb-olimpia.png" alt="Herb Olimpii Warszawa">
+        <span>OLIMPIA WARSZAWA<small>KLUB PIŁKARSKI</small></span>
+      </a>
+      <button class="menu" id="menuBtn" aria-label="Otwórz menu" aria-expanded="false">☰</button>
+      <nav id="mainNav">
+        <a href="#klub">KLUB</a><a href="#stadion">STADION</a><a href="#aktualnosci">AKTUALNOŚCI</a><a href="#kontakt">KONTAKT</a>
+      </nav>
+      <a class="nav-cta" href="#kontakt">DOŁĄCZ DO NAS</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="start">
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow">Warszawa · Piłka nożna</div>
+          <h1>RAZEM<br>TWORZYMY<br>OLIMPIĘ.</h1>
+          <p>Witamy na stronie Olimpii Warszawa. Poznaj klub, zobacz nasze boisko i trybuny oraz bądź bliżej piłkarskich wydarzeń.</p>
+          <div class="hero-actions"><a class="btn btn-light" href="#klub">POZNAJ KLUB</a><a class="btn btn-outline" href="#stadion">ZOBACZ STADION</a></div>
+        </div>
+      </div>
+      <img class="hero-mark" src="assets/herb-olimpia.png" alt="">
+    </section>
+
+    <div class="ticker"><div class="container ticker-inner">OLIMPIA WARSZAWA <span>✦</span> PASJA <span>✦</span> PIŁKA NOŻNA <span>✦</span> WSPÓLNOTA <span>✦</span> OLIMPIA WARSZAWA</div></div>
+
+    <section id="klub">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Poznaj nas</div><h2>Klub. Ludzie. Pasja.</h2></div><p>Olimpia Warszawa to piłkarska społeczność, którą tworzą zawodnicy, trenerzy, kibice i wszyscy przywiązani do klubowych barw.</p></div>
+        <div class="intro-grid">
+          <div class="intro-copy">
+            <h3>Jedna drużyna. Wspólne barwy.</h3>
+            <p>Ta strona jest miejscem, w którym możesz poznać Olimpię Warszawa i śledzić informacje z życia klubu.</p>
+            <p>Chcemy pokazywać piłkarskie emocje, stadion oraz ludzi, którzy tworzą to miejsce. Zaglądaj tu po aktualności, informacje o drużynach i szczegóły nadchodzących spotkań.</p>
+            <a class="btn" href="#aktualnosci">AKTUALNOŚCI KLUBU</a>
+          </div>
+          <div class="intro-photo"><img src="assets/trybuny-1.jpg" alt="Trybuny stadionu Olimpii Warszawa"><div class="photo-tag"><small>Nasze miejsce</small>Stadion Olimpii</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="values">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Nasze DNA</div><h2>Więcej niż mecz.</h2></div><p>Klub to nie tylko wynik na tablicy. To codzienna praca, wspólne przeżycia i więź z miejscem.</p></div>
+        <div class="value-grid">
+          <article class="value-card"><div class="value-no">01 / ZAANGAŻOWANIE</div><h3>Pasja do gry</h3><p>Piłka nożna, trening i radość z każdego wspólnego występu.</p></article>
+          <article class="value-card"><div class="value-no">02 / WSPÓLNOTA</div><h3>Klubowe barwy</h3><p>Zawodnicy, kibice i sympatycy – razem budujemy atmosferę Olimpii.</p></article>
+          <article class="value-card"><div class="value-no">03 / TOŻSAMOŚĆ</div><h3>Nasze miejsce</h3><p>Stadion i trybuny, które są częścią piłkarskiego życia klubu.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="stadion">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Zobacz nasze miejsce</div><h2>Stadion Olimpii.</h2></div><p>Obrazy stadionu, boiska i trybun – uchwycone na przesłanych zdjęciach.</p></div>
+        <div class="gallery-grid">
+          <figure><img src="assets/stadion-plyta.jpg" alt="Widok murawy i stadionu Olimpii Warszawa"><figcaption>Boisko – tutaj toczy się gra</figcaption></figure>
+          <figure><img src="assets/trybuny-2.jpg" alt="Trybuny stadionu z perspektywy boiska"><figcaption>Trybuny i klubowe barwy</figcaption></figure>
+          <figure><img src="assets/stadion-graffiti.jpg" alt="Detal stadionu z napisem 1952"><figcaption>Detal stadionu – napis 1952</figcaption></figure>
+        </div>
+        <p class="gallery-note">W galerii wykorzystano również drugie przesłane zdjęcie tego samego detalu stadionu.</p>
+      </div>
+    </section>
+
+    <section class="news" id="aktualnosci">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Bądź na bieżąco</div><h2>Aktualności.</h2></div><p>Przestrzeń na klubowe komunikaty, zapowiedzi spotkań, wyniki i relacje.</p></div>
+        <div class="news-grid">
+          <article class="news-card"><div class="date">Komunikat klubowy</div><h3>Wiadomości z Olimpii</h3><p>W tym miejscu dodaj najnowsze informacje dotyczące klubu i jego działalności.</p><span class="placeholder">MIEJSCE NA AKTUALNOŚĆ</span></article>
+          <article class="news-card"><div class="date">Terminarz</div><h3>Nadchodzące spotkania</h3><p>Uzupełnij datę, godzinę, rywala i miejsce najbliższego meczu.</p><span class="placeholder">MIEJSCE NA TERMINARZ</span></article>
+          <article class="news-card"><div class="date">Wyniki</div><h3>Ostatni mecz</h3><p>Dodaj wynik spotkania oraz krótką relację z boiska.</p><span class="placeholder">MIEJSCE NA WYNIK</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="kontakt">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Kontakt</div><h2>Do zobaczenia na stadionie.</h2></div><p>Masz pytanie dotyczące klubu, treningów lub współpracy? Skontaktuj się z Olimpią.</p></div>
+        <div class="contact-grid">
+          <div class="contact-box"><h3>Olimpia Warszawa</h3><p>Klub piłkarski · Warszawa</p><p>Oficjalne dane kontaktowe zostaną uzupełnione po ich otrzymaniu.</p></div>
+          <div class="contact-box"><h3>Uzupełnij dane klubu</h3><p>Adres stadionu: <strong>do uzupełnienia</strong></p><p>E-mail: <strong>do uzupełnienia</strong></p><p>Telefon: <strong>do uzupełnienia</strong></p><p class="contact-hint">Przed publikacją wpisz zweryfikowane dane kontaktowe i oficjalne kanały społecznościowe klubu.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container footer-inner"><div class="footer-brand">OLIMPIA WARSZAWA</div><div>© <span id="year"></span> Olimpia Warszawa · Strona klubowa</div><div>Granat · Niebieski · Biały</div></div></footer>
+  <script>
+    const menuBtn=document.getElementById('menuBtn');
+    const nav=document.getElementById('mainNav');
+    menuBtn.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));menuBtn.textContent=open?'✕':'☰';});
+    nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.textContent='☰';}));
+    document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
