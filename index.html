@@ -611,11 +611,11 @@
   </div> 
 
  <!-- LEGENDA -->
-  <div class="legenda-tabeli">
-    <span><i class="zielony"></i> Bezpośredni awans</span>
-    <span><i class="zolty"></i> Strefa zagrożenia</span>
-    <span><i class="czerwony"></i> Strefa spadkowa</span>
-  </div>
+<div class="legenda-tabeli">
+  <span><i class="zielony"></i> Bezpośredni awans</span>
+  <span><i class="zolty"></i> Strefa zagrożenia</span>
+  <span><i class="czerwony"></i> Strefa spadkowa</span>
+</div>
 </section>
 
 <style>
@@ -696,36 +696,45 @@
   font-weight: 800;
 } 
 
-/* 🟢 1. I 2. MIEJSCE - BEZPOŚREDNI AWANS */
-.liga tbody tr.awans {
-  background: rgba(34, 197, 94, 0.18);
+/* 🟢 1. I 2. MIEJSCE – AWANS */
+.liga tbody tr:nth-child(1),
+.liga tbody tr:nth-child(2) {
+  background: rgba(34, 197, 94, 0.20);
   border-left: 5px solid #22c55e;
 }
 
-.liga tbody tr.awans:hover {
-  background: rgba(34, 197, 94, 0.30);
-}
-
-/* 🟨 11. MIEJSCE - STREFA ZAGROŻENIA */
-.liga tbody tr.zagrozenie {
-  background: rgba(250, 204, 21, 0.18);
+/* 🟡 11. MIEJSCE – STREFA ZAGROŻENIA */
+.liga tbody tr:nth-child(11) {
+  background: rgba(250, 204, 21, 0.20);
   border-left: 5px solid #facc15;
 }
 
-.liga tbody tr.zagrozenie:hover {
-  background: rgba(250, 204, 21, 0.30);
-}
-
-/* 🟥 12. 13. I 14. MIEJSCE - STREFA SPADKOWA */
-.liga tbody tr.spadek {
-  background: rgba(239, 68, 68, 0.18);
+/* 🔴 12., 13. I 14. MIEJSCE – STREFA SPADKOWA */
+.liga tbody tr:nth-child(12),
+.liga tbody tr:nth-child(13),
+.liga tbody tr:nth-child(14) {
+  background: rgba(239, 68, 68, 0.20);
   border-left: 5px solid #ef4444;
 }
 
-.liga tbody tr.spadek:hover {
-  background: rgba(239, 68, 68, 0.30);
+/* HOVER – AWANS */
+.liga tbody tr:nth-child(1):hover,
+.liga tbody tr:nth-child(2):hover {
+  background: rgba(34, 197, 94, 0.35);
 }
 
+/* HOVER – ŻÓŁTY */
+.liga tbody tr:nth-child(11):hover {
+  background: rgba(250, 204, 21, 0.35);
+}
+
+/* HOVER – SPADKOWE */
+.liga tbody tr:nth-child(12):hover,
+.liga tbody tr:nth-child(13):hover,
+.liga tbody tr:nth-child(14):hover {
+  background: rgba(239, 68, 68, 0.35);
+} 
+  
 /* 🔵 OLIMPIA WARSZAWA - WYRÓŻNIENIE */
 .liga tbody tr.olimpia td {
   font-weight: 800;
